@@ -3,9 +3,9 @@
 #include "nRF24L01.h"
 #include "RF24.h"
 
-byte potentiMetrPin1 = 0;
+byte potentiMetrPin1 = 6;
 int potentiMetrValue1 = 0;
-byte potentiMetrPin2 = 6;
+byte potentiMetrPin2 = 0;
 int potentiMetrValue2 = 0;
 int nullValue = 510;
 
@@ -50,14 +50,14 @@ int processData(int receivedData) {
   }
   if (receivedData > nullValue) {
     if (receivedData > 1020) {
-      return -255;
+      return 255;
     }
     data = receivedData - nullValue;
-    return -data/2;
+    return data/2;
 
   } else if (receivedData < nullValue) {
     data = nullValue - receivedData;
-    return data/2;
+    return -data/2;
   }
   return 0;
 }
