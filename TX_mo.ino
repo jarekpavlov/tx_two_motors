@@ -5,11 +5,11 @@
 
 byte potentiMetrPin1 = 0;
 int potentiMetrValue1 = 0;
-byte potentiMetrPin2 = 1;
+byte potentiMetrPin2 = 6;
 int potentiMetrValue2 = 0;
 int nullValue = 510;
 
-RF24 radio(9, 10); // "создать" модуль на пинах 9 и 10 Для ардуино
+RF24 radio(7, 8); // "создать" модуль на пинах 9 и 10 Для ардуино
 //RF24 radio(9,53); // для Меги
 
 byte address[][6] = {"1Node", "2Node", "3Node", "4Node", "5Node", "6Node"}; //возможные номера труб
